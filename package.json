@@ -9,10 +9,11 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "jest": "^27.2.4",
     "nodemon": "^2.0.13"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC"

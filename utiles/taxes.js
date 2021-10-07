@@ -52,8 +52,10 @@ function getRIA(employee) {
  * @function getISR
  * @description: Returns the ISR amount for determinated employee code.
  * @param employee: Integer that has the key to identify given employee.  
+ * @returns String
  */
-function getISR(employee) {
+function getISR(employeeNumber) {
+    const employee = Number(employeeNumber)
     if (clients.hasOwnProperty(employee)) {
         const client = clients[employee]
         const RIA = getRIA(client)
@@ -71,4 +73,4 @@ function getISR(employee) {
     }
 }
 
-module.exports.getISR = getISR;
+module.exports = { getISR, getRIA};
