@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 app.post('/proyeccionisr', jsonParser, (req, res) => {
     const { body } = req
     const { colaborador } = body
-    res.send({isr: getISR.getISR(colaborador)})
+    res.send({isr: getISR.getISR(Number(colaborador))})
 })
 
 app.listen(port, () => {

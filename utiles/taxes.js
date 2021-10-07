@@ -1,19 +1,29 @@
+/**
+ * @import clients is our dummie data to simulate a MongoDB response.
+ */
 var clients = require("../data/data.json")
 
-const factor = {
+/**
+ * @constant FACTOR:  is used to know how many times is the employee getting paid.
+ */
+const FACTOR = {
     "Mensual": 12,
     "Semanal": 52
 }
 
+/**
+ * @constant MVA: Minimum of earnings to paid ISR.
+ */
 const MVA = 48000
 
 /**
+ * @function getRIA
  * @description:Functions which returns every earnings of determinated employee
  * @param: employee is the employee object with all information.
  */
 function getRIA(employee) {
     const payMethod = employee['Frecuencia de pago']
-    const usedFactor = factor[payMethod]
+    const usedFactor = FACTOR[payMethod]
     if (usedFactor === 12) {//Mensual
         const salary = employee["Pagos Anuales"]["Sueldo Mensual"]
         const monthlyEarning = salary["Ingresos afectos"] - salary["Descuentos afectos"]
@@ -39,23 +49,24 @@ function getRIA(employee) {
 }
 
 /**
+ * @function getISR
  * @description: Returns the ISR amount for determinated employee code.
- * @param: employee which is integer and has the key to identify given employee.  
+ * @param employee: Integer that has the key to identify given employee.  
  */
 function getISR(employee) {
     if (clients.hasOwnProperty(employee)) {
         const client = clients[employee]
         const RIA = getRIA(client)
         const RN = RIA - MVA      
-        console.log(RN)  
         if(RIA - MVA  < 0) 
-            return {isr:0}
-        const R = factor[ client['Frecuencia de pago'] ]
+            return 0
+        const R = FACTOR[ client['Frecuencia de pago'] ]
         const ISRA = RN * 0.05
         const ISR = ISRA/ R 
-        return `Cliente ${client.nombre} paga ${ISR}`
+        return ISR.toFixed(2)
     }
     else {
+        console.error("Empleado no encontrado.")
         return "No se ha encontrado el empleado."
     }
 }
