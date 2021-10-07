@@ -1,0 +1,53 @@
+{
+    "2233": {
+        "nombre": "Pánfilo Reyes",
+        "Frecuencia de pago": "Mensual",
+        "Pagos Anuales":{
+            "Sueldo Mensual":{
+                "Ingresos afectos": 11500,
+                "Descuentos afectos": 136.45
+            }
+        },
+        "Bono 14": {
+            "Ingresos afectos": 11500
+        },
+        "Aguinaldo":{
+            "Ingresos afectos": 11500
+        },
+        "Bono aniversario":{
+            "Ingresos afectos": 1000
+        }
+    },
+    "1881": {
+        "nombre": "Lucrecia Arana",
+        "Frecuencia de pago": "Semanal",
+        "Pagos Anuales":{
+            "Sueldo Semanal":{
+                "Ingresos afectos": 2250,
+                "Descuentos afectos": 50
+            }
+        },
+        "Bono 14": {
+            "Ingresos afectos": 9000
+        },
+        "Aguinaldo":{
+            "Ingresos afectos": 9000
+        }
+    },
+    "2332": {
+        "nombre": "Marcelina Flores",
+        "Frecuencia de pago": "Mensual",
+        "Pagos Anuales":{
+            "Sueldo Mensual":{
+                "Ingresos afectos": 3000,
+                "Descuentos afectos": 136.45
+            }
+        },
+        "Bono 14": {
+            "Ingresos afectos": 3000
+        },
+        "Aguinaldo":{
+            "Ingresos afectos": 3000
+        }
+    }
+}
